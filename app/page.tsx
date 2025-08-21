@@ -125,9 +125,7 @@ export default function HomePage() {
               <Badge variant="outline" className="mb-6 px-4 py-2">
                 About Dr. Khatib
               </Badge>
-              <h2 className="text-4xl font-bold leading-tight">
-                Combining Military Leadership with Engineering Excellence
-              </h2>
+              <h2 className="text-4xl font-bold leading-tight">Engineering Excellence Through Academic Leadership</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 Dr. Milad Khatib is an accomplished Assistant Professor at Lebanese International University and a
                 distinguished civil engineer with 26+ years of experience in structural and geotechnical engineering. As
@@ -839,7 +837,7 @@ export default function HomePage() {
                 <span className="font-bold text-xl">Dr. Milad Khatib</span>
               </div>
               <p className="text-sm text-muted-foreground leading-relaxed">
-                Professional civil engineering consulting with military precision and academic excellence.
+                Professional civil engineering consulting with academic excellence and innovative solutions.
               </p>
               <div className="pt-4">
                 <Button variant="outline" size="sm" className="px-4 py-2 bg-transparent" asChild>
