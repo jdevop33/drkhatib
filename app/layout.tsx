@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   authors: [{ name: "Dr. Milad Khatib" }],
   creator: "Dr. Milad Khatib",
   publisher: "Dr. Milad Khatib Consulting",
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
+  },
   openGraph: {
     title: "Dr. Milad Khatib - Civil Engineering Consultant & Patent Holder",
     description:
@@ -73,7 +78,7 @@ export const metadata: Metadata = {
   verification: {
     google: "your-google-verification-code",
   },
-    generator: 'v0.app'
+  generator: "v0.app",
 }
 
 export default function RootLayout({
@@ -83,6 +88,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geist.variable} ${manrope.variable} antialiased`}>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
       <body className="font-sans">{children}</body>
     </html>
   )
