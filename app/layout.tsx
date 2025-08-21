@@ -25,9 +25,13 @@ export const metadata: Metadata = {
   creator: "Dr. Milad Khatib",
   publisher: "Dr. Milad Khatib Consulting",
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
     shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    apple: [{ url: "/icon-192.png", sizes: "192x192", type: "image/png" }],
   },
   openGraph: {
     title: "Dr. Milad Khatib - Civil Engineering Consultant & Patent Holder",
@@ -88,9 +92,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geist.variable} ${manrope.variable} antialiased`}>
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
       <body className="font-sans">{children}</body>
     </html>
   )
