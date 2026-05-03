@@ -22,7 +22,9 @@ export function buildMetadata(input: BuildMetadataInput): Metadata {
   const enPath = stripLocale(input.path);
   const arPath = enPath === '/' ? '/ar' : `/ar${enPath}`;
   const canonical = locale === 'en' ? enPath : arPath;
-  const ogImage = input.ogImage ?? '/icons-and-meta/og-default.png';
+  // Default OG image is rendered dynamically by app/opengraph-image.tsx
+  // (Next 14 file convention) and served at /opengraph-image.
+  const ogImage = input.ogImage ?? '/opengraph-image';
   const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${SITE}${ogImage}`;
   const ogImageAlt =
     input.ogImageAlt ?? 'Dr. Milad Khatib at his office, Beirut, 2026.';
