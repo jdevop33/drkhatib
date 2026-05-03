@@ -36,16 +36,16 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
         <div className="relative mx-auto grid max-w-7xl gap-10 px-4 py-16 md:grid-cols-[5fr_6fr] md:gap-16 md:px-8 md:py-28 lg:py-36">
           {/* Portrait column */}
           <div className="order-2 md:order-1">
-            <div className="relative aspect-[4/5] overflow-hidden border border-gold/30">
+            <div className="relative aspect-[3/4] overflow-hidden border border-gold/30 bg-deep-navy">
               <Image
-                src="/images/dr-khatib-portrait.png"
+                src="/images/dr-khatib-official-2026.jpg"
                 alt="Dr. Milad Khatib at his office, Beirut, 2026."
                 fill
                 priority
                 sizes="(min-width: 768px) 45vw, 100vw"
-                className="object-cover"
+                className="object-cover object-[center_top]"
               />
-              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-deep-navy/10 to-deep-navy/80" />
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-deep-navy/70" />
               <div className="absolute bottom-0 left-0 right-0 flex flex-col gap-1 bg-deep-navy/85 px-4 py-3 backdrop-blur-sm">
                 <Mono className="text-[10px] uppercase tracking-tracked text-gold">
                   {dict.meta.city} · 2026
