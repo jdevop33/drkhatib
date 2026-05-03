@@ -34,11 +34,8 @@ export const brand = {
   taglineAr: 'الهندسة بالبرهان.',
   domain: 'miladkhatib.com',
   emailPlaceholder: 'milad@miladkhatib.com',
-  // CV lists +961 3 927 934, but RECONCILIATION-NOTES.md flags it as
-  // "Worth a quick confirm before publishing on a public site." Until the
-  // WhatsApp confirmation arrives, we render a "Pending" indicator instead
-  // of the number. Swap to the confirmed value when it arrives.
-  phoneConfirmed: false as const,
+  // Confirmed for public use per the master bilingual inventory v1 (§1 Identity).
+  phoneConfirmed: true as const,
   phoneCandidate: '+961 3 927 934',
   city: 'Beirut',
   country: 'Lebanon',
