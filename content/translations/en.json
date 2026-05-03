@@ -42,6 +42,19 @@
       "2 Patents · LB",
       "52 Publications · 21 Editorial Roles"
     ],
+    "pillarCta": "Read pillar →",
+    "patentCta": "View case study →",
+    "byTheNumbers": {
+      "eyebrow": "By the numbers",
+      "items": [
+        { "value": "52", "label": "Peer-reviewed publications" },
+        { "value": "21", "label": "Editorial / reviewer roles" },
+        { "value": "2", "label": "Lebanese-registered patents" },
+        { "value": "1", "label": "Published book" },
+        { "value": "45", "label": "Co-authors · 4 nationalities" },
+        { "value": "27 yr", "label": "Career, 1998 → present" }
+      ]
+    },
     "pillarsTitle": "Three pillars of practice",
     "pillarsLede": "One intellectual project, three lines of inquiry.",
     "pillars": {
@@ -270,7 +283,8 @@
       },
       "success": "Thank you. Dr. Khatib will reply within two business days.",
       "error": "Could not send. Please email milad@miladkhatib.com directly.",
-      "required": "Required"
+      "required": "Required",
+      "invalid": "Invalid"
     }
   },
   "legal": {

@@ -96,6 +96,27 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
         </div>
       </section>
 
+      {/* BY THE NUMBERS — calm credential strip, six items */}
+      <section className="border-y border-warm-gray/15 bg-deep-navy px-4 py-12 md:px-8 md:py-16">
+        <div className="mx-auto max-w-7xl">
+          <Mono className="mb-6 block text-[11px] uppercase tracking-tracked text-gold">
+            {dict.home.byTheNumbers.eyebrow}
+          </Mono>
+          <ul className="grid grid-cols-2 gap-x-6 gap-y-8 md:grid-cols-3 lg:grid-cols-6">
+            {dict.home.byTheNumbers.items.map((item) => (
+              <li key={item.label} className="flex flex-col gap-2 border-l border-gold/30 pl-4">
+                <span className="font-display text-3xl font-semibold leading-none text-cream md:text-4xl">
+                  {item.value}
+                </span>
+                <span className="font-mono text-[10px] uppercase leading-snug tracking-tracked text-warm-gray">
+                  {item.label}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* THREE PILLARS */}
       <section className="bg-navy/50 px-4 py-20 md:px-8 md:py-28">
         <div className="mx-auto max-w-7xl">
@@ -106,9 +127,9 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
             lede={dict.home.pillarsLede}
           />
           <div className="mt-12 grid gap-6 md:grid-cols-3 md:gap-8">
-            <PillarCard {...dict.home.pillars.structural} />
-            <PillarCard {...dict.home.pillars.geotechnical} />
-            <PillarCard {...dict.home.pillars.forensic} />
+            <PillarCard {...dict.home.pillars.structural} cta={dict.home.pillarCta} />
+            <PillarCard {...dict.home.pillars.geotechnical} cta={dict.home.pillarCta} />
+            <PillarCard {...dict.home.pillars.forensic} cta={dict.home.pillarCta} />
           </div>
         </div>
       </section>
@@ -188,6 +209,7 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
               jurisdiction={dict.patents.vessel.jurisdiction}
               summary={dict.patents.vessel.summary}
               href={dict.patents.vessel.href}
+              cta={dict.home.patentCta}
             />
             <PatentCard
               year={dict.patents.foodCollector.year}
@@ -195,6 +217,7 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
               jurisdiction={dict.patents.foodCollector.jurisdiction}
               summary={dict.patents.foodCollector.summary}
               href={dict.patents.foodCollector.href}
+              cta={dict.home.patentCta}
             />
           </div>
           <p className="mt-6 max-w-prose text-sm text-warm-gray">

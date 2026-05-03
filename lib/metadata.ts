@@ -22,8 +22,6 @@ export function buildMetadata(input: BuildMetadataInput): Metadata {
   const enPath = stripLocale(input.path);
   const arPath = enPath === '/' ? '/ar' : `/ar${enPath}`;
   const canonical = locale === 'en' ? enPath : arPath;
-  // Default OG image is rendered dynamically by app/opengraph-image.tsx
-  // (Next 14 file convention) and served at /opengraph-image.
   const ogImage = input.ogImage ?? '/opengraph-image';
   const ogImageAbsolute = ogImage.startsWith('http') ? ogImage : `${SITE}${ogImage}`;
   const ogImageAlt =
@@ -118,7 +116,7 @@ export function personJsonLd() {
       `https://sciprofiles.com/profile/${profiles.sciprofiles}`,
     ],
     url: SITE,
-    image: `${SITE}/icons-and-meta/og-default.png`,
+    image: `${SITE}/opengraph-image`,
     description:
       'Beirut-based civilian civil engineering consultant. Structural, geotechnical, and forensic. Two registered Lebanese patents, fifty-two peer-reviewed publications, twenty-one editorial positions.',
   };
