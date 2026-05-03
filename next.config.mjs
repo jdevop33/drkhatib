@@ -1,14 +1,21 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  reactStrictMode: true,
+  poweredByHeader: false,
+  compress: true,
   images: {
-    unoptimized: true,
+    formats: ['image/avif', 'image/webp'],
   },
-}
+  async headers() {
+    return [
+      {
+        source: '/:all*(svg|jpg|jpeg|png|webp|avif|woff2|ico)',
+        headers: [
+          { key: 'Cache-Control', value: 'public, max-age=31536000, immutable' },
+        ],
+      },
+    ];
+  },
+};
 
-export default nextConfig
+export default nextConfig;
