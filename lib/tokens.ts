@@ -50,6 +50,9 @@ export const profiles = {
   researchgate: 'Milad-Khatib',
   publons: '3464477/milad-khatib',
   sciprofiles: '1156816',
+  livedna: '961.44159',
+  peeref: 'dAE2o9pMP3rz',
+  academia: 'https://tarekjaber.academia.edu/MiladKhatib',
   spscCode: '00014774',
   amazonBook: 'https://www.amazon.in/-/hi/M-S-Khatib-ebook/dp/B0FZ5XV829',
 } as const;

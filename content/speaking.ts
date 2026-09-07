@@ -16,6 +16,29 @@ export interface Talk {
   highlight?: string; // optional badge text — "Keynote", "First Lebanese speaker", etc.
 }
 
+const MONTH_TO_ISO: Record<string, string> = {
+  Jan: '01',
+  Feb: '02',
+  Mar: '03',
+  Apr: '04',
+  May: '05',
+  Jun: '06',
+  Jul: '07',
+  Aug: '08',
+  Sep: '09',
+  Oct: '10',
+  Nov: '11',
+  Dec: '12',
+};
+
+/** Display dates stay human (`Jul 2024`). Schema startDate must be ISO 8601. */
+export function toIsoStartDate(display: string): string {
+  if (/^\d{4}$/.test(display)) return display;
+  const match = /^([A-Z][a-z]{2}) (\d{4})$/.exec(display);
+  if (match && MONTH_TO_ISO[match[1]]) return `${match[2]}-${MONTH_TO_ISO[match[1]]}`;
+  return display;
+}
+
 export const talks: Talk[] = [
   {
     date: '2024',

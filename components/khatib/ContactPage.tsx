@@ -73,6 +73,18 @@ export function ContactPage({ locale, dict }: { locale: Locale; dict: Dictionary
               <li>
                 <a className="hover:text-cream" href={`https://www.researchgate.net/profile/${profiles.researchgate}`} target="_blank" rel="noopener noreferrer">ResearchGate</a>
               </li>
+              <li>
+                <a className="hover:text-cream" href={`https://sciprofiles.com/profile/${profiles.sciprofiles}`} target="_blank" rel="noopener noreferrer">SciProfiles</a>
+              </li>
+              <li>
+                <a className="hover:text-cream" href={`https://livedna.org/?dna=${profiles.livedna}`} target="_blank" rel="noopener noreferrer">LiveDNA</a>
+              </li>
+              <li>
+                <a className="hover:text-cream" href={`https://www.peeref.com/authors/${profiles.peeref}`} target="_blank" rel="noopener noreferrer">Peeref</a>
+              </li>
+              <li>
+                <a className="hover:text-cream" href={profiles.academia} target="_blank" rel="noopener noreferrer">Academia.edu</a>
+              </li>
             </ul>
           </div>
 

@@ -1,5 +1,6 @@
 import type { Locale } from '@/lib/tokens';
 import type { Dictionary } from '@/lib/i18n';
+import { speakingEventsJsonLd } from '@/lib/metadata';
 import { Mono } from './atoms';
 import { SectionHeading } from './SectionHeading';
 import { talks } from '@/content/speaking';
@@ -8,6 +9,13 @@ export function SpeakingPage({ locale, dict }: { locale: Locale; dict: Dictionar
   const isAr = locale === 'ar';
   return (
     <article className="bg-deep-navy">
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD injection
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(speakingEventsJsonLd(locale)),
+        }}
+      />
       <header className="border-b border-warm-gray/15 px-4 py-20 md:px-8 md:py-28">
         <div className="mx-auto max-w-5xl">
           <SectionHeading

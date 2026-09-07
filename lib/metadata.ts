@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import type { Locale } from './tokens';
 import { brand, profiles } from './tokens';
+import { talks, toIsoStartDate } from '@/content/speaking';
 
 interface BuildMetadataInput {
   title: string;
@@ -80,6 +81,13 @@ function stripLocale(path: string): string {
   return stripped === '' ? '/' : stripped;
 }
 
+const COUNTRY_ISO: Record<string, string> = {
+  Lebanon: 'LB',
+  China: 'CN',
+  India: 'IN',
+  Dubai: 'AE',
+};
+
 // Civilian-only Person JSON-LD. Used on home and About.
 export function personJsonLd() {
   return {
@@ -114,6 +122,9 @@ export function personJsonLd() {
       `https://www.researchgate.net/profile/${profiles.researchgate}`,
       `https://publons.com/researcher/${profiles.publons}`,
       `https://sciprofiles.com/profile/${profiles.sciprofiles}`,
+      `https://livedna.org/?dna=${profiles.livedna}`,
+      `https://www.peeref.com/authors/${profiles.peeref}`,
+      profiles.academia,
     ],
     url: SITE,
     image: `${SITE}/opengraph-image`,
@@ -143,4 +154,36 @@ export function breadcrumbJsonLd(items: Array<{ name: string; href: string }>) {
       item: `${SITE}${item.href}`,
     })),
   };
+}
+
+export function speakingEventsJsonLd(locale: Locale) {
+  const isAr = locale === 'ar';
+  return talks.map((talk) => {
+    const isoCountry = COUNTRY_ISO[talk.country];
+    return {
+      '@context': 'https://schema.org',
+      '@type': 'Event',
+      name: isAr ? talk.title_ar : talk.title_en,
+      startDate: toIsoStartDate(talk.date),
+      eventStatus: 'https://schema.org/EventScheduled',
+      location: {
+        '@type': 'Place',
+        name: talk.venue,
+        ...(isoCountry
+          ? {
+              address: {
+                '@type': 'PostalAddress',
+                addressCountry: isoCountry,
+              },
+            }
+          : {}),
+      },
+      performer: {
+        '@type': 'Person',
+        name: brand.shortNameEn,
+        url: SITE,
+      },
+      ...(talk.link ? { url: talk.link } : {}),
+    };
+  });
 }
