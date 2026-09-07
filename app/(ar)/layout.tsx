@@ -3,6 +3,7 @@ import '../globals.css';
 import { fontVariables } from '@/lib/fonts';
 import { getDictionary } from '@/lib/i18n';
 import { brand } from '@/lib/tokens';
+import { Analytics } from '@/components/khatib/Analytics';
 import { SiteHeader } from '@/components/khatib/SiteHeader';
 import { SiteFooter } from '@/components/khatib/SiteFooter';
 
@@ -33,6 +34,7 @@ export default function ArabicRootLayout({ children }: { children: React.ReactNo
   return (
     <html lang="ar" dir="rtl" className={fontVariables}>
       <body className="bg-deep-navy font-arabic text-cream antialiased">
+        <Analytics />
         <a href="#main" className="skip-link">
           {dict.nav.skipToContent}
         </a>

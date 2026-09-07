@@ -3,6 +3,7 @@ import '../globals.css';
 import { fontVariables } from '@/lib/fonts';
 import { getDictionary } from '@/lib/i18n';
 import { brand } from '@/lib/tokens';
+import { Analytics } from '@/components/khatib/Analytics';
 import { SiteHeader } from '@/components/khatib/SiteHeader';
 import { SiteFooter } from '@/components/khatib/SiteFooter';
 
@@ -34,6 +35,7 @@ export default function EnglishRootLayout({ children }: { children: React.ReactN
   return (
     <html lang="en" dir="ltr" className={fontVariables}>
       <body className="bg-deep-navy text-cream antialiased">
+        <Analytics />
         <a href="#main" className="skip-link">
           {dict.nav.skipToContent}
         </a>
