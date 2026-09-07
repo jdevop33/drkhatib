@@ -290,7 +290,7 @@
   "legal": {
     "privacy": {
       "title": "Privacy",
-      "body": "This site collects no analytics cookies. Contact-form submissions are routed to Dr. Khatib's email and retained for the duration of the inquiry. No data is shared with third parties beyond the email-delivery provider (Resend)."
+      "body": "This site uses Google Analytics 4 (measurement ID G-RVSF2K39E9) so visits can be measured and the listing on Google Business Profile can be linked to the same property. Contact-form submissions go to Dr. Khatib's email and are kept for the duration of the inquiry. Form data is not shared beyond the email provider (Resend). Separate first-party analytics (Umami), where configured, does not use advertising cookies."
     },
     "terms": {
       "title": "Terms of Use",
